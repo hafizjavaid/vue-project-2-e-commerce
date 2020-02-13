@@ -1,28 +1,54 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Navbar></Navbar>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <router-view></router-view>
+        </div>
+        <Modal></Modal>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import Navbar from "./components/Navbar.vue";
+// import Product from "./components/Product.vue";
+// import Details from "./components/Details.vue";
+// import Cart from "./components/Cart.vue";
+// import Default from "./components/Default.vue";
+import Modal from "./components/Modal.vue";
 export default {
-  name: 'app',
   components: {
-    HelloWorld
+    Navbar,
+    Modal
+    // Product,
+    // Details,
+    // Cart,
+    // Default
   }
-}
+};
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+:root {
+  --mainBlue: #2a2a72;
+  --lightBlue: #009ffd;
+  --mainWhit: #f3f3f3;
+  --mainDark: #232528;
+  --mainYellow: #ffa400;
+}
+body {
+  background: var(--mainWhit) !important;
+  color: #232528 !important;
+}
+.text-title {
+  letter-spacing: 0.3rem;
+  text-transform: uppercase;
+}
+.text-blue {
+  color: #2a2a72;
 }
 </style>
